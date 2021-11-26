@@ -57,6 +57,7 @@ def download_pdf(url, save_to):
             print('Failed')
             return
         open(save_to, 'wb').write(resp.content)
+        time.sleep(3)
     except Exception as e:
         print(e)
 
@@ -94,7 +95,6 @@ def download_with_symposia(symposia, save_to_dir):
     for paper in papers:
         print('Downloading ' + paper['title'])
         download_with_title(paper['title'], path.join(save_to_dir, strip_title(paper['title']) + '.pdf'))
-        time.sleep(3)
 
 
 if __name__ == '__main__':
