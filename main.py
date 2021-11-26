@@ -28,7 +28,7 @@ def strip_title(paper_name):
     '''
     Transfer Name Of The Paper To URL
     '''
-    return re.sub(r'[^0-9a-zA-Z- \.]', '', html.unescape(paper_name)).replace(' ', '-').lower()
+    return re.sub(r'[^0-9a-zA-Z- \.]', '', html.unescape(paper_name)).replace(' ', '-').replace('µ', 'mu').lower()
 
 
 def list_papers(html):
